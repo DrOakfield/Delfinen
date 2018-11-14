@@ -33,6 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
         trænerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Vælg venligst, hvem du er:");
@@ -84,7 +85,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(394, 393));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formandButtonActionPerformed

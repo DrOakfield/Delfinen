@@ -51,6 +51,11 @@ public class FormandMenu extends javax.swing.JFrame {
         sletMedlemButton.setMaximumSize(new java.awt.Dimension(127, 32));
         sletMedlemButton.setMinimumSize(new java.awt.Dimension(127, 32));
         sletMedlemButton.setPreferredSize(new java.awt.Dimension(127, 32));
+        sletMedlemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sletMedlemButtonActionPerformed(evt);
+            }
+        });
 
         visMedlemslisteButton.setText("Vis Medlemsliste");
 
@@ -85,6 +90,7 @@ public class FormandMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
@@ -95,6 +101,14 @@ public class FormandMenu extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
+
+    private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
+        // TODO add your handling code here:
+        SletMedlem sm = new SletMedlem();
+        
+        sm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     /**
      * @param args the command line arguments

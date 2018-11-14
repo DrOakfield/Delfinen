@@ -78,6 +78,11 @@ public class TilføjMedlem extends javax.swing.JFrame {
         kSvømmerRadioButton.setText("Konkurrencesvømmer");
 
         tilføjMedlemButton.setText("Tilføj");
+        tilføjMedlemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tilføjMedlemButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,7 +151,12 @@ public class TilføjMedlem extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
 
     /**
      * @param args the command line arguments
