@@ -5,6 +5,8 @@
  */
 package delfinen;
 
+import delfinen.presentation.MainMenu;
+
 /**
  *
  * @author Mads Egevang Jensen
@@ -16,6 +18,8 @@ public class Delfinen {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MainMenu mm = new MainMenu();
+        mm.setVisible(true);
     }
     
 }
