@@ -17,7 +17,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,31 +28,31 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        formandButton = new javax.swing.JButton();
+        kassererButton = new javax.swing.JButton();
+        trænerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Vælg venligst, hvem du er:");
 
-        jButton1.setText("Formand");
-        jButton1.setMaximumSize(new java.awt.Dimension(83, 32));
-        jButton1.setMinimumSize(new java.awt.Dimension(83, 32));
-        jButton1.setPreferredSize(new java.awt.Dimension(83, 32));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        formandButton.setText("Formand");
+        formandButton.setMaximumSize(new java.awt.Dimension(83, 32));
+        formandButton.setMinimumSize(new java.awt.Dimension(83, 32));
+        formandButton.setPreferredSize(new java.awt.Dimension(83, 32));
+        formandButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                formandButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Kasserer");
+        kassererButton.setText("Kasserer");
 
-        jButton3.setText("Træner");
-        jButton3.setMaximumSize(new java.awt.Dimension(83, 32));
-        jButton3.setMinimumSize(new java.awt.Dimension(83, 32));
-        jButton3.setPreferredSize(new java.awt.Dimension(83, 32));
+        trænerButton.setText("Træner");
+        trænerButton.setMaximumSize(new java.awt.Dimension(83, 32));
+        trænerButton.setMinimumSize(new java.awt.Dimension(83, 32));
+        trænerButton.setPreferredSize(new java.awt.Dimension(83, 32));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,9 +65,9 @@ public class MainMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(kassererButton)
+                            .addComponent(formandButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(trænerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,20 +76,24 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
                 .addGap(43, 43, 43)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(formandButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jButton2)
+                .addComponent(kassererButton)
                 .addGap(45, 45, 45)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(trænerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void formandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formandButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        FormandMenu fm = new FormandMenu();
+        
+        fm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_formandButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,9 +131,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton formandButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton kassererButton;
+    private javax.swing.JButton trænerButton;
     // End of variables declaration//GEN-END:variables
 }
