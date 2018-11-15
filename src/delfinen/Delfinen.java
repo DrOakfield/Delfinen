@@ -20,6 +20,7 @@ public class Delfinen {
         // TODO code application logic here
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
+        //kald Arraylist + lav hele sætop til p,c,l,d
     }
     
 }
