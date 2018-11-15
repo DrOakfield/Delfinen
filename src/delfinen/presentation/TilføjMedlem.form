@@ -39,8 +39,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jTextField2" min="-2" pref="246" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="alderTextField" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="navnTextField" min="-2" pref="246" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
           </Group>
@@ -85,9 +85,9 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+              <Component id="navnTextField" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+              <Component id="alderTextField" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="aktivRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -125,12 +125,12 @@
         <Property name="text" type="java.lang.String" value="Tilf&#xf8;j Medlem:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="navnTextField">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fulde Navn"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="alderTextField">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alder i &#xe5;r"/>
       </Properties>
