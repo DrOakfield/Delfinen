@@ -43,6 +43,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         kSvømmerRadioButton = new javax.swing.JRadioButton();
         tilføjMedlemButton = new javax.swing.JButton();
+        tilbageButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +56,11 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
         aktivPassivButtonGroup.add(aktivRadioButton);
         aktivRadioButton.setText("Aktiv");
+        aktivRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aktivRadioButtonActionPerformed(evt);
+            }
+        });
 
         aktivPassivButtonGroup.add(passivRadioButton);
         passivRadioButton.setText("Passiv");
@@ -84,6 +90,13 @@ public class TilføjMedlem extends javax.swing.JFrame {
             }
         });
 
+        tilbageButton.setText("Tilbage");
+        tilbageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tilbageButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,8 +113,11 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 .addGap(104, 104, 104))
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tilføjMedlemButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tilbageButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tilføjMedlemButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(aktivRadioButton)
@@ -146,7 +162,9 @@ public class TilføjMedlem extends javax.swing.JFrame {
                     .addComponent(seniorRadioButton)
                     .addComponent(kSvømmerRadioButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(tilføjMedlemButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tilføjMedlemButton)
+                    .addComponent(tilbageButton))
                 .addGap(38, 38, 38))
         );
 
@@ -157,6 +175,18 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
+
+    private void aktivRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aktivRadioButtonActionPerformed
+
+    private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
+        // TODO add your handling code here:
+        FormandMenu fm = new FormandMenu();
+        
+        fm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_tilbageButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +239,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private javax.swing.JRadioButton motionistRadioButton;
     private javax.swing.JRadioButton passivRadioButton;
     private javax.swing.JRadioButton seniorRadioButton;
+    private javax.swing.JButton tilbageButton;
     private javax.swing.JButton tilføjMedlemButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,6 +30,7 @@ public class SletMedlem extends javax.swing.JFrame {
         medlemComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         sletMedlemButton = new javax.swing.JButton();
+        tilbageButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,20 +46,29 @@ public class SletMedlem extends javax.swing.JFrame {
             }
         });
 
+        tilbageButton.setText("Tilbage");
+        tilbageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tilbageButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(medlemComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(44, 44, 44)
                             .addComponent(jLabel1))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(147, 147, 147)
-                            .addComponent(sletMedlemButton))))
+                            .addComponent(sletMedlemButton)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tilbageButton)
+                        .addComponent(medlemComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -70,7 +80,9 @@ public class SletMedlem extends javax.swing.JFrame {
                 .addComponent(medlemComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(sletMedlemButton)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(tilbageButton)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -80,6 +92,13 @@ public class SletMedlem extends javax.swing.JFrame {
     private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
+
+    private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
+        FormandMenu fm = new FormandMenu();
+        
+        fm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_tilbageButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,5 +139,6 @@ public class SletMedlem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JComboBox<String> medlemComboBox;
     private javax.swing.JButton sletMedlemButton;
+    private javax.swing.JButton tilbageButton;
     // End of variables declaration//GEN-END:variables
 }
