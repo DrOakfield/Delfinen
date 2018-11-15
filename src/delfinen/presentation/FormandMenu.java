@@ -31,6 +31,7 @@ public class FormandMenu extends javax.swing.JFrame {
         tilføjMedlemButton = new javax.swing.JButton();
         sletMedlemButton = new javax.swing.JButton();
         visMedlemslisteButton = new javax.swing.JButton();
+        tilbageButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,18 @@ public class FormandMenu extends javax.swing.JFrame {
         });
 
         visMedlemslisteButton.setText("Vis Medlemsliste");
+        visMedlemslisteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visMedlemslisteButtonActionPerformed(evt);
+            }
+        });
+
+        tilbageButton.setText("Tilbage");
+        tilbageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tilbageButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,7 +85,9 @@ public class FormandMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tilbageButton)
+                    .addComponent(jLabel1))
                 .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
@@ -86,7 +101,9 @@ public class FormandMenu extends javax.swing.JFrame {
                 .addComponent(sletMedlemButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(visMedlemslisteButton)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(tilbageButton)
+                .addGap(54, 54, 54))
         );
 
         pack();
@@ -109,6 +126,22 @@ public class FormandMenu extends javax.swing.JFrame {
         sm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
+
+    private void visMedlemslisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemslisteButtonActionPerformed
+        // TODO add your handling code here:
+        Medlemsliste ml = new Medlemsliste();
+        
+        ml.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_visMedlemslisteButtonActionPerformed
+
+    private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
+        // TODO add your handling code here:
+        MainMenu mm = new MainMenu();
+        
+        mm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_tilbageButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,6 +181,7 @@ public class FormandMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton sletMedlemButton;
+    private javax.swing.JButton tilbageButton;
     private javax.swing.JButton tilføjMedlemButton;
     private javax.swing.JButton visMedlemslisteButton;
     // End of variables declaration//GEN-END:variables
