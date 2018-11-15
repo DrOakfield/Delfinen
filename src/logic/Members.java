@@ -14,15 +14,15 @@ import java.util.List;
 public class Members {
     private String Name;
     private int Age;
-    private int ID;
-    ArrayList<Members> allMembers = new ArrayList<>();
+    //private int ID;
+    private ArrayList<Members> allMembers = new ArrayList<>();
     private static final boolean DEBUG = true;
     private String MemberList = "C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\delfinen.data\\MemberList";
-
-    public Members(String Name, int Age, int ID) {
+                                
+    public Members(String Name, int Age/*, int ID*/) {
         this.Name = Name;
         this.Age = Age;
-        this.ID = ID;
+      //  this.ID = ID;
     }
 
     public String getName() {
@@ -41,7 +41,7 @@ public class Members {
         this.Age = Age;
     }
 
-
+/*
     public int getID() {
         return ID;
     }
@@ -49,19 +49,20 @@ public class Members {
     public void setID(int ID) {
         this.ID = ID;
     }
-    
+  */  
     
     @Override
     public String toString() {
-        return "Members{" + "Name=" + Name + ", Age=" + Age + ", ID=" + ID + '}';
+        return "Members{" + "Name=" + Name + ", Age=" + Age + /*", ID=" + ID*/ + '}';
     }
     
-    public void addMember(){
-      
+    public void addMember(String Name, int Age /*,int ID*/  ){
+        Members member = new Members(Name, Age /*, ID*/);
+        allMembers.add(member);
         
     }
-    public String showMember(){
-        return "manger input"; //ArrayList<Members> eller toString => test. 
+    public ArrayList showAllMembers(){
+        return allMembers;
     }
     
     public void write(List<List> ListOfMembers) {
