@@ -9,13 +9,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
+import logic.Member;
 
 
 public class ReadWrite {
         private static final boolean DEBUG = true;
         private String MemberList = "C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\delfinen.data\\MemberList";
 
-    public void write(List<List> ListOfMembers) {
+    public void write(List<Member> ListOfMembers) {
         ObjectOutputStream out = null;
         try {
             File file = new File(MemberList);
@@ -39,14 +40,14 @@ public class ReadWrite {
         }
     }
 
-    public List<List> readObject() {
+    public List<Member> readObject() {
         ObjectInputStream in = null;
         try {
             File file = new File(MemberList);
             in = new ObjectInputStream(new FileInputStream(file));
-            List<List> p = (List<List>) in.readObject();
-            for (List list : p) {
-                System.out.println(list);
+            List<Member> p = (List<Member>) in.readObject();
+            for (Member m : p) {
+                System.out.println(m);
             }
             return p;
         } catch (FileNotFoundException ex) {
