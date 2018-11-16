@@ -184,6 +184,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         AllMembers c = new AllMembers();
         Member member = c.createMember(name, age);
         c.addMember(member);
+        System.out.println(member);
 //            member.addMember(name, age);
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
 
