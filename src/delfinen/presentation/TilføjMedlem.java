@@ -48,6 +48,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         tilbageButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tilføj Medlem");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Tilføj Medlem:");

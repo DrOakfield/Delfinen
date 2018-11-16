@@ -6,6 +6,8 @@
 package delfinen;
 
 import delfinen.presentation.MainMenu;
+import java.util.ArrayList;
+import logic.Members;
 
 /**
  *
@@ -18,9 +20,11 @@ public class Delfinen {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MainMenu mm = new MainMenu();
+        Members m1 = new Members("Mogens", 22);
+        m1.addMember("Birger", 65);
+        MainMenu mm = new MainMenu(m1);
         mm.setVisible(true);
         //kald Arraylist + lav hele sætop til p,c,l,d
     }
-    
+
 }

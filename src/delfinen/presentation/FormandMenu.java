@@ -5,6 +5,8 @@
  */
 package delfinen.presentation;
 
+import logic.Members;
+
 /**
  *
  * @author Mads Egevang Jensen
@@ -14,7 +16,10 @@ public class FormandMenu extends javax.swing.JFrame {
     /**
      * Creates new form FormandMenu
      */
-    public FormandMenu() {
+    Members a;
+    
+    public FormandMenu(Members a) {
+        this.a = a;
         initComponents();
     }
 
@@ -34,6 +39,7 @@ public class FormandMenu extends javax.swing.JFrame {
         tilbageButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Formands Menu");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Vælg hvordan du ønsker at administrere:");
@@ -129,7 +135,7 @@ public class FormandMenu extends javax.swing.JFrame {
 
     private void visMedlemslisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemslisteButtonActionPerformed
         // TODO add your handling code here:
-        Medlemsliste ml = new Medlemsliste();
+        Medlemsliste ml = new Medlemsliste(a);
         
         ml.setVisible(true);
         this.setVisible(false);
@@ -137,7 +143,7 @@ public class FormandMenu extends javax.swing.JFrame {
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
-        MainMenu mm = new MainMenu();
+        MainMenu mm = new MainMenu(a);
         
         mm.setVisible(true);
         this.setVisible(false);
@@ -173,7 +179,7 @@ public class FormandMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormandMenu().setVisible(true);
+//                new FormandMenu().setVisible(true);
             }
         });
     }

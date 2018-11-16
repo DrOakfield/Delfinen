@@ -5,19 +5,25 @@
  */
 package delfinen.presentation;
 
+import logic.Members;
+
 /**
  *
  * @author Mads Egevang Jensen
  */
 public class MainMenu extends javax.swing.JFrame {
 
+    Members a;
+
     /**
      * Creates new form MainMenu
      */
-    public MainMenu() {
+    public MainMenu(Members a) {
+        this.a = a;
         initComponents();
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +39,7 @@ public class MainMenu extends javax.swing.JFrame {
         trænerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hovedmenu");
         setLocation(new java.awt.Point(0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -91,8 +98,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void formandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formandButtonActionPerformed
         // TODO add your handling code here:
-        FormandMenu fm = new FormandMenu();
-        
+        FormandMenu fm = new FormandMenu(a);
+
         fm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_formandButtonActionPerformed
@@ -127,7 +134,7 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenu().setVisible(true);
+//                new MainMenu(a).setVisible(true);
             }
         });
     }
