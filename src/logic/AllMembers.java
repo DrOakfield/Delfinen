@@ -1,17 +1,24 @@
 package logic;
 
+import delfinen.data.ReadWrite;
 import java.util.ArrayList;
+import java.util.List;
 
-public class AllMembers {
-    private ArrayList<Member> allMembers = new ArrayList<>();
-    
-    
-    public void addMember(String Name, int Age /*,int ID*/){
-        Member member = new Member(Name, Age /*, ID*/);
-        allMembers.add(member);
-        
+public class AllMembers{
+    private static List<Member> allMembers = new ArrayList<>();
+    static {
+        allMembers = new ReadWrite().readObject();
     }
-    public ArrayList showAllMembers(){
+    
+    public Member createMember(String name, int age){
+        return new Member(name, age);
+    }
+    public void addMember(Member member){
+        allMembers.add(member);
+        ReadWrite rw = new ReadWrite();
+        rw.write(allMembers);
+    }
+    public List<Member> showAllMembers(){
         return allMembers;
     }
     
