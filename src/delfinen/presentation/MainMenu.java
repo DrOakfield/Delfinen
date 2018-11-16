@@ -5,6 +5,8 @@
  */
 package delfinen.presentation;
 
+import logic.AllMembers;
+import logic.Member;
 import logic.Members;
 
 /**
@@ -13,13 +15,17 @@ import logic.Members;
  */
 public class MainMenu extends javax.swing.JFrame {
 
-    Members a;
+    
 
     /**
      * Creates new form MainMenu
      */
-    public MainMenu(Members a) {
+    Member a;
+    AllMembers b;
+    
+    public MainMenu(Member a, AllMembers b) {
         this.a = a;
+        this.b = b;
         initComponents();
 
     }
@@ -98,9 +104,9 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void formandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formandButtonActionPerformed
         // TODO add your handling code here:
-        FormandMenu fm = new FormandMenu(a);
+        
 
-        fm.setVisible(true);
+        new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_formandButtonActionPerformed
 

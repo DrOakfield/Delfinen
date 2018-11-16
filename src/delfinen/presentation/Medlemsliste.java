@@ -7,7 +7,8 @@ package delfinen.presentation;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
-import logic.Members;
+import logic.AllMembers;
+import logic.Member;
 
 /**
  *
@@ -18,11 +19,13 @@ public class Medlemsliste extends javax.swing.JFrame {
     /**
      * Creates new form Medlemsliste
      */
-    Members a;
-    public Medlemsliste(Members a) {
+    Member a;
+    AllMembers b;
+    
+    public Medlemsliste(Member a, AllMembers b) {
         this.a = a;
+        this.b = b;
         initComponents();
-//        showMemberList();
     }
 
     /**
@@ -104,9 +107,8 @@ public class Medlemsliste extends javax.swing.JFrame {
         
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
-        FormandMenu fm = new FormandMenu(a);
         
-        fm.setVisible(true);
+        new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_tilbageButtonActionPerformed
@@ -115,7 +117,7 @@ public class Medlemsliste extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         DefaultListModel dlm = new DefaultListModel();
-        dlm.addElement(a.showAllMembers());
+        dlm.addElement(b.showAllMembers());
         medlemmerList.setModel(dlm);
 //        Members member = new Members(Name, Age);
         

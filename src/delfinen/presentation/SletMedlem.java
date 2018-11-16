@@ -5,6 +5,9 @@
  */
 package delfinen.presentation;
 
+import logic.AllMembers;
+import logic.Member;
+
 /**
  *
  * @author Mads Egevang Jensen
@@ -14,7 +17,12 @@ public class SletMedlem extends javax.swing.JFrame {
     /**
      * Creates new form SletMedlem
      */
-    public SletMedlem() {
+    Member a;
+    AllMembers b;
+    
+    public SletMedlem(Member a, AllMembers b) {
+        this.a = a;
+        this.b = b;
         initComponents();
     }
 
@@ -95,9 +103,8 @@ public class SletMedlem extends javax.swing.JFrame {
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
-        FormandMenu fm = new FormandMenu();
         
-        fm.setVisible(true);
+        new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
 
@@ -131,7 +138,7 @@ public class SletMedlem extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SletMedlem().setVisible(true);
+//                new SletMedlem().setVisible(true);
             }
         });
     }

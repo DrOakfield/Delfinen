@@ -5,6 +5,8 @@
  */
 package delfinen.presentation;
 
+import logic.AllMembers;
+import logic.Member;
 import logic.Members;
 
 /**
@@ -16,10 +18,12 @@ public class FormandMenu extends javax.swing.JFrame {
     /**
      * Creates new form FormandMenu
      */
-    Members a;
+    Member a;
+    AllMembers b;
     
-    public FormandMenu(Members a) {
+    public FormandMenu(Member a, AllMembers b) {
         this.a = a;
+        this.b = b;
         initComponents();
     }
 
@@ -118,34 +122,30 @@ public class FormandMenu extends javax.swing.JFrame {
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         // TODO add your handling code here:
-        TilføjMedlem tm = new TilføjMedlem();
         
-        tm.setVisible(true);
+        new TilføjMedlem(a, b).setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
 
     private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
         // TODO add your handling code here:
-        SletMedlem sm = new SletMedlem();
         
-        sm.setVisible(true);
+        new SletMedlem(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     private void visMedlemslisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemslisteButtonActionPerformed
         // TODO add your handling code here:
-        Medlemsliste ml = new Medlemsliste(a);
         
-        ml.setVisible(true);
+        new Medlemsliste(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_visMedlemslisteButtonActionPerformed
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
-        MainMenu mm = new MainMenu(a);
         
-        mm.setVisible(true);
+        new MainMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
 

@@ -17,7 +17,12 @@ public class TilføjMedlem extends javax.swing.JFrame {
     /**
      * Creates new form TilføjMedlem
      */
-    public TilføjMedlem() {
+    Member a;
+    AllMembers b;
+    
+    public TilføjMedlem(Member a, AllMembers b) {
+        this.a = a;
+        this.b = b;
         initComponents();
     }
 
@@ -195,9 +200,9 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
-        FormandMenu fm = new FormandMenu();
         
-        fm.setVisible(true);
+        
+        new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
 
@@ -231,7 +236,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TilføjMedlem().setVisible(true);
+//                new TilføjMedlem().setVisible(true);
             }
         });
     }
