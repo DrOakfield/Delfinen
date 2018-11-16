@@ -1,9 +1,10 @@
 package logic;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Member {
+public class Member implements Serializable {
     private String Name;
     private int Age;
     private int ID;
@@ -44,7 +45,7 @@ public class Member {
     
     @Override
     public String toString() {
-        return "Members{" + "Name=" + Name + ", Age=" + Age + /*", ID=" + ID*/ + '}';
+        return "Member:" + Name + "," + Age;
     }
    
 }
