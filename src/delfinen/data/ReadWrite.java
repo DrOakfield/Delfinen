@@ -13,14 +13,16 @@ import logic.Member;
 
 
 public class ReadWrite {
-        private static final boolean DEBUG = true;
-        private String MemberList = "C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\delfinen.data\\MemberList";
+
+    private static final boolean DEBUG = true;
+    private String MemberList = "C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
 
     public void write(List<Member> ListOfMembers) {
         ObjectOutputStream out = null;
         try {
             File file = new File(MemberList);
             out = new ObjectOutputStream(new FileOutputStream(file));
+//            out = new ObjectOutputStream(new FileOutputStream(MemberList));
             out.writeObject(ListOfMembers);
             out.flush();
         } catch (FileNotFoundException ex) {
@@ -28,14 +30,14 @@ public class ReadWrite {
                 ex.printStackTrace();
             }
             {
-                System.out.println("prøv igen senere");
+                System.out.println("prøv skriv1 senere");
             }
         } catch (IOException ex) {
             if (DEBUG) {
                 ex.printStackTrace();
             }
             {
-                System.out.println("prøv igen senere");
+                System.out.println("prøv skriv2 senere");
             }
         }
     }
@@ -55,21 +57,21 @@ public class ReadWrite {
                 ex.printStackTrace();
             }
             {
-                System.out.println("prøv igen senere");
+                System.out.println("prøv læs1 senere");
             }
         } catch (IOException ex) {
             if (DEBUG) {
                 ex.printStackTrace();
             }
             {
-                System.out.println("prøv igen senere");
+                System.out.println("prøv læs2 senere");
             }
         } catch (ClassNotFoundException ex) {
             if (DEBUG) {
                 ex.printStackTrace();
             }
             {
-                System.out.println("prøv igen senere");
+                System.out.println("prøv læs3 senere");
             }
         }
         return null;
