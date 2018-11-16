@@ -10,10 +10,10 @@ public class Members {
     private ArrayList<Members> allMembers = new ArrayList<>();
 
     
-    public Members(String Name, int Age, int ID) {
+    public Members(String Name, int Age/*, int ID*/) {
         this.Name = Name;
         this.Age = Age;
-        this.ID = ID;
+      //  this.ID = ID;
     }
 
     public String getName() {
@@ -47,8 +47,8 @@ public class Members {
         return "Members{" + "Name=" + Name + ", Age=" + Age + /*", ID=" + ID*/ + '}';
     }
     
-    public void addMember(String Name, int Age ,int ID){
-        Members member = new Members(Name, Age , ID);
+    public void addMember(String Name, int Age /*,int ID*/){
+        Members member = new Members(Name, Age /*, ID*/);
         allMembers.add(member);
         
     }
