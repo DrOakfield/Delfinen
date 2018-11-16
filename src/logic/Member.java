@@ -1,16 +1,17 @@
 package logic;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Members {
+public class Member implements Serializable {
     private String Name;
     private int Age;
     private int ID;
-    private ArrayList<Members> allMembers = new ArrayList<>();
+    
 
     
-    public Members(String Name, int Age/*, int ID*/) {
+    public Member(String Name, int Age/*, int ID*/) {
         this.Name = Name;
         this.Age = Age;
       //  this.ID = ID;
@@ -44,16 +45,7 @@ public class Members {
     
     @Override
     public String toString() {
-        return "Members{" + "Name=" + Name + ", Age=" + Age + /*", ID=" + ID*/ + '}';
+        return "Member:" + Name + "," + Age;
     }
-    
-    public void addMember(String Name, int Age /*,int ID*/){
-        Members member = new Members(Name, Age /*, ID*/);
-        allMembers.add(member);
-        
-    }
-    public ArrayList showAllMembers(){
-        return allMembers;
-    }
-    
+   
 }

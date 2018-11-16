@@ -5,7 +5,8 @@
  */
 package delfinen.presentation;
 
-import logic.Members;
+import logic.AllMembers;
+import logic.Member;
 
 /**
  *
@@ -176,14 +177,16 @@ public class TilføjMedlem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
-            String name = navnTextField.getText();
-            
-            String getAge = alderTextField.getText();
-            int age = Integer.parseInt(getAge);
-        
-            Members member = new Members(name, age);
-            
-            member.addMember(name, age);
+        String name = navnTextField.getText();
+
+        String getAge = alderTextField.getText();
+        int age = Integer.parseInt(getAge);
+
+        AllMembers c = new AllMembers();
+        Member member = c.createMember(name, age);
+        c.addMember(member);
+        System.out.println(member);
+//            member.addMember(name, age);
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
 
     private void aktivRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivRadioButtonActionPerformed
