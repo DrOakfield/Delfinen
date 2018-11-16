@@ -7,7 +7,7 @@ public class Member {
     private String Name;
     private int Age;
     private int ID;
-    private ArrayList<Member> allMembers = new ArrayList<>();
+    
 
     
     public Member(String Name, int Age/*, int ID*/) {
@@ -46,14 +46,5 @@ public class Member {
     public String toString() {
         return "Members{" + "Name=" + Name + ", Age=" + Age + /*", ID=" + ID*/ + '}';
     }
-    
-    public void addMember(String Name, int Age /*,int ID*/){
-        Member member = new Member(Name, Age /*, ID*/);
-        allMembers.add(member);
-        
-    }
-    public ArrayList showAllMembers(){
-        return allMembers;
-    }
-    
+   
 }
