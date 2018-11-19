@@ -7,16 +7,14 @@ import java.util.ArrayList;
 public class Member implements Serializable {
     private String Name;
     private int Age;
-    private int ID;
-    
+    private int Id;
 
-    
-    public Member(String Name, int Age/*, int ID*/) {
+    public Member(String Name, int Age, int Id) {
         this.Name = Name;
         this.Age = Age;
-      //  this.ID = ID;
+        this.Id = Id;
     }
-
+    
     public String getName() {
         return Name;
     }
@@ -34,18 +32,18 @@ public class Member implements Serializable {
     }
 
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return Id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int Id) {
+        this.Id = Id;
     }
  
     
     @Override
     public String toString() {
-        return "Member: " + Name + "," + Age + "\n";
+        return "Member: " + Name + "," + Age + ", " + Id + "\n";
     }
    
 }

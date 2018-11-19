@@ -10,8 +10,8 @@ public class AllMembers{
         allMembers = new ReadWrite().readObject();
     } 
     
-    public Member createMember(String name, int age){
-        return new Member(name, age);
+    public Member createMember(String name, int age,int Id){
+        return new Member(name, age, Id);
     }
     public void addMember(Member member){
         allMembers.add(member);

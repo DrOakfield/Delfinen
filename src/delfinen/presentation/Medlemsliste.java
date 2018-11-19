@@ -22,7 +22,7 @@ public class Medlemsliste extends javax.swing.JFrame {
      */
     public String fullName;
     public int age;
-    public int ID;
+    public int Id;
     Member a;
     AllMembers b;
     
@@ -34,11 +34,11 @@ public class Medlemsliste extends javax.swing.JFrame {
     }
     public void addRowToJTable(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        Object rowData[] = new Object[2];
+        Object rowData[] = new Object[3];
         for (int i = 0; i < b.showAllMembers().size(); i++) {
             rowData[0] = b.showAllMembers().get(i).getName();
             rowData[1] = b.showAllMembers().get(i).getAge();
-         //   rowData[2] = b.showAllMembers().get(i).getID();
+            rowData[2] = b.showAllMembers().get(i).getId();
          model.addRow(rowData);
         }
     }
