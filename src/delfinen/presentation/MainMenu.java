@@ -7,7 +7,6 @@ package delfinen.presentation;
 
 import logic.AllMembers;
 import logic.Member;
-import logic.Members;
 
 /**
  *
