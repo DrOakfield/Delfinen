@@ -39,9 +39,14 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="alderTextField" min="-2" pref="246" max="-2" attributes="0"/>
-                  <Component id="navnTextField" min="-2" pref="246" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabel5" linkSize="1" max="32767" attributes="0"/>
+                  <Component id="jLabel6" linkSize="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="navnTextField" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="alderTextField" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
           </Group>
@@ -86,9 +91,15 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="navnTextField" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="navnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="alderTextField" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="alderTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="aktivRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -127,14 +138,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="navnTextField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fulde Navn"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="navnTextFieldActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="alderTextField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Alder i &#xe5;r"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="aktivRadioButton">
       <Properties>
@@ -217,6 +225,19 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tilbageButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fulde navn"/>
+      </Properties>
+      <Events>
+        <EventHandler event="ancestorMoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jLabel5AncestorMoved"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Alder"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -52,6 +52,8 @@ public class TilføjMedlem extends javax.swing.JFrame {
         kSvømmerRadioButton = new javax.swing.JRadioButton();
         tilføjMedlemButton = new javax.swing.JButton();
         tilbageButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tilføj Medlem");
@@ -59,9 +61,11 @@ public class TilføjMedlem extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Tilføj Medlem:");
 
-        navnTextField.setText("Fulde Navn");
-
-        alderTextField.setText("Alder i år");
+        navnTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                navnTextFieldActionPerformed(evt);
+            }
+        });
 
         aktivPassivButtonGroup.add(aktivRadioButton);
         aktivRadioButton.setText("Aktiv");
@@ -106,6 +110,19 @@ public class TilføjMedlem extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Fulde navn");
+        jLabel5.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jLabel5AncestorMoved(evt);
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jLabel6.setText("Alder");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,9 +133,13 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 .addGap(175, 175, 175))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(alderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(navnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navnTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alderTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(104, 104, 104))
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
@@ -146,15 +167,22 @@ public class TilføjMedlem extends javax.swing.JFrame {
                     .addComponent(motionistRadioButton))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel5, jLabel6});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addComponent(navnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(navnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addComponent(alderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aktivRadioButton)
@@ -176,6 +204,8 @@ public class TilføjMedlem extends javax.swing.JFrame {
                     .addComponent(tilbageButton))
                 .addGap(38, 38, 38))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel5, jLabel6});
 
         pack();
         setLocationRelativeTo(null);
@@ -205,6 +235,14 @@ public class TilføjMedlem extends javax.swing.JFrame {
         new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
+
+    private void navnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navnTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_navnTextFieldActionPerformed
+
+    private void jLabel5AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5AncestorMoved
 
     /**
      * @param args the command line arguments
@@ -249,6 +287,8 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton juniorRadioButton;
     private javax.swing.ButtonGroup juniorSeniorbuttonGroup;
     private javax.swing.JRadioButton kSvømmerRadioButton;
