@@ -15,7 +15,7 @@ import logic.Member;
 public class ReadWrite {
 
     private static final boolean DEBUG = true;
-    private String MemberList = "C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
+    private String MemberList = "./MemberList.txt";                                                    //"C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
 
     public void write(List<Member> ListOfMembers) {
         ObjectOutputStream out = null;
@@ -76,4 +76,6 @@ public class ReadWrite {
         }
         return null;
     }
+    
+    
 }
