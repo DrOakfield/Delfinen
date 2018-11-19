@@ -45,7 +45,7 @@ public class Member implements Serializable {
     
     @Override
     public String toString() {
-        return "Member:" + Name + "," + Age;
+        return "Member: " + Name + "," + Age;
     }
    
 }
