@@ -13,12 +13,13 @@ import logic.Member;
 
 
 public class ReadWrite {
-
+    ObjectInputStream in;
+    ObjectOutputStream out;
     private static final boolean DEBUG = true;
     private String MemberList = "./MemberList.txt";                                                    //"C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
 
     public void write(List<Member> ListOfMembers) {
-        ObjectOutputStream out = null;
+        
         try {
             File file = new File(MemberList);
             out = new ObjectOutputStream(new FileOutputStream(file));
@@ -43,7 +44,7 @@ public class ReadWrite {
     }
 
     public List<Member> readObject() {
-        ObjectInputStream in = null;
+         // skal denne ikke sættes under class og ikke undlades en værdi?
         try {
             File file = new File(MemberList);
             in = new ObjectInputStream(new FileInputStream(file));
