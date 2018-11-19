@@ -8,7 +8,7 @@ public class AllMembers{
     private static List<Member> allMembers = new ArrayList<>();
     static {
         allMembers = new ReadWrite().readObject();
-    }
+    } 
     
     public Member createMember(String name, int age){
         return new Member(name, age);
@@ -19,6 +19,7 @@ public class AllMembers{
         rw.write(allMembers);
     }
     public List<Member> showAllMembers(){
+
         return allMembers;
     }
     
