@@ -7,6 +7,7 @@ package delfinen.presentation;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 import logic.AllMembers;
 import logic.Member;
 
@@ -19,6 +20,9 @@ public class Medlemsliste extends javax.swing.JFrame {
     /**
      * Creates new form Medlemsliste
      */
+    public String fullName;
+    public int age;
+    public int ID;
     Member a;
     AllMembers b;
     
@@ -26,6 +30,17 @@ public class Medlemsliste extends javax.swing.JFrame {
         this.a = a;
         this.b = b;
         initComponents();
+        addRowToJTable();
+    }
+    public void addRowToJTable(){
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        Object rowData[] = new Object[2];
+        for (int i = 0; i < b.showAllMembers().size(); i++) {
+            rowData[0] = b.showAllMembers().get(i).getName();
+            rowData[1] = b.showAllMembers().get(i).getAge();
+         //   rowData[2] = b.showAllMembers().get(i).getID();
+         model.addRow(rowData);
+        }
     }
 
     /**
@@ -39,18 +54,15 @@ public class Medlemsliste extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        medlemmerList = new javax.swing.JList<>();
         tilbageButton = new javax.swing.JButton();
-        visMedlemmerButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Medlemsliste");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel1.setText("Medlemsliste");
-
-        jScrollPane1.setViewportView(medlemmerList);
 
         tilbageButton.setText("Tilbage");
         tilbageButton.addActionListener(new java.awt.event.ActionListener() {
@@ -59,31 +71,32 @@ public class Medlemsliste extends javax.swing.JFrame {
             }
         });
 
-        visMedlemmerButton.setText("VIs Medlemmer");
-        visMedlemmerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visMedlemmerButtonActionPerformed(evt);
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Fulde navn", "Alder", "ID"
             }
-        });
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jSeparator1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 49, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tilbageButton)
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(visMedlemmerButton)
-                        .addGap(30, 30, 30))))
+                .addComponent(tilbageButton)
+                .addGap(58, 58, 58)
+                .addComponent(jLabel1)
+                .addGap(30, 179, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,13 +104,12 @@ public class Medlemsliste extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(tilbageButton)
-                    .addComponent(visMedlemmerButton))
+                    .addComponent(tilbageButton))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,17 +124,6 @@ public class Medlemsliste extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_tilbageButtonActionPerformed
-
-    private void visMedlemmerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemmerButtonActionPerformed
-        // TODO add your handling code here:
-        
-        DefaultListModel dlm = new DefaultListModel();
-        dlm.addElement(b.showAllMembers());
-        medlemmerList.setModel(dlm);
-//        Members member = new Members(Name, Age);
-        
-        
-    }//GEN-LAST:event_visMedlemmerButtonActionPerformed
 
     
     /*private void showMemberList() {
@@ -165,10 +166,9 @@ public class Medlemsliste extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JList<String> medlemmerList;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton tilbageButton;
-    private javax.swing.JButton visMedlemmerButton;
     // End of variables declaration//GEN-END:variables
 }
