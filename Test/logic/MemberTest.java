@@ -50,6 +50,17 @@ public class MemberTest {
         fail("The test case is a prototype.");
     }
 
+    /**
+     * Test of setName method, of class Member.
+     */
+    @Test
+    public void testSetName() {
+        System.out.println("setName");
+        String Name = "";
+        Member instance = null;
+        instance.setName(Name);
+        fail("The test case is a prototype.");
+    }
 
     /**
      * Test of getAge method, of class Member.
@@ -65,18 +76,41 @@ public class MemberTest {
     }
 
     /**
-     * Test of getID method, of class Member.
+     * Test of setAge method, of class Member.
      */
     @Test
-    public void testGetID() {
-        System.out.println("getID");
+    public void testSetAge() {
+        System.out.println("setAge");
+        int Age = 0;
+        Member instance = null;
+        instance.setAge(Age);
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getId method, of class Member.
+     */
+    @Test
+    public void testGetId() {
+        System.out.println("getId");
         Member instance = null;
         int expResult = 0;
-        int result = instance.getID();
+        int result = instance.getId();
         assertEquals(expResult, result);
         fail("The test case is a prototype.");
     }
 
+    /**
+     * Test of setId method, of class Member.
+     */
+    @Test
+    public void testSetId() {
+        System.out.println("setId");
+        int Id = 0;
+        Member instance = null;
+        instance.setId(Id);
+        fail("The test case is a prototype.");
+    }
 
     /**
      * Test of toString method, of class Member.
