@@ -241,7 +241,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         
         // convert text to int, to get id
         String getId = Txt_Id.getText();
-        int Id = Integer.parseInt(getAge);
+        int Id = Integer.parseInt(getId);
 
         AllMembers c = new AllMembers();
         Member member = c.createMember(name, age, Id);
