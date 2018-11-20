@@ -40,6 +40,8 @@ public class TilføjMedlem extends javax.swing.JFrame {
         juniorSeniorbuttonGroup = new javax.swing.ButtonGroup();
         motionKSvømmerButtonGroup = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         navnTextField = new javax.swing.JTextField();
         alderTextField = new javax.swing.JTextField();
@@ -90,20 +92,20 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
         jLabel2.setText("Eller");
 
-        buttonGroup1.add(juniorRadioButton);
+        buttonGroup2.add(juniorRadioButton);
         juniorRadioButton.setText("Juniorsvømmer");
 
         jLabel3.setText("Eller");
 
-        buttonGroup1.add(seniorRadioButton);
+        buttonGroup2.add(seniorRadioButton);
         seniorRadioButton.setText("Seniorsvømmer");
 
-        buttonGroup1.add(motionistRadioButton);
+        buttonGroup3.add(motionistRadioButton);
         motionistRadioButton.setText("Motionist");
 
         jLabel4.setText("Eller");
 
-        buttonGroup1.add(kSvømmerRadioButton);
+        buttonGroup3.add(kSvømmerRadioButton);
         kSvømmerRadioButton.setText("Konkurrencesvømmer");
 
         tilføjMedlemButton.setText("Tilføj");
@@ -256,8 +258,10 @@ public class TilføjMedlem extends javax.swing.JFrame {
         }
         //System.out.println(member);
 //            member.addMember(name, age);
-        JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+       
         buttonGroup1.clearSelection();
+        buttonGroup2.clearSelection();
+        buttonGroup3.clearSelection();
         navnTextField.setText(null);
         alderTextField.setText(null);
         Txt_Id.setText(null);
@@ -343,6 +347,8 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private javax.swing.JRadioButton aktivRadioButton;
     private javax.swing.JTextField alderTextField;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
