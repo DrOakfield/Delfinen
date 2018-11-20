@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllMembers {
+    ReadWrite rw = new ReadWrite();
 
     private static List<Member> allMembers = new ArrayList<>();
 
@@ -18,12 +19,11 @@ public class AllMembers {
 
     public void addMember(Member member) {
         allMembers.add(member);
-        ReadWrite rw = new ReadWrite();
         rw.write(allMembers);
     }
 
     public List<Member> showAllMembers() {
-
+//        rw.write(allMembers);
         return allMembers;
     }
     
