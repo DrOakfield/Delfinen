@@ -39,7 +39,7 @@ public class Medlemsliste extends javax.swing.JFrame {
             rowData[0] = b.showAllMembers().get(i).getName();
             rowData[1] = b.showAllMembers().get(i).getAge();
             rowData[2] = b.showAllMembers().get(i).getId();
-         model.addRow(rowData);
+            model.addRow(rowData);
         }
     }
 
