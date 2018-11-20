@@ -39,6 +39,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
         aktivPassivButtonGroup = new javax.swing.ButtonGroup();
         juniorSeniorbuttonGroup = new javax.swing.ButtonGroup();
         motionKSvømmerButtonGroup = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         navnTextField = new javax.swing.JTextField();
         alderTextField = new javax.swing.JTextField();
@@ -76,7 +77,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
             }
         });
 
-        aktivPassivButtonGroup.add(aktivRadioButton);
+        buttonGroup1.add(aktivRadioButton);
         aktivRadioButton.setText("Aktiv");
         aktivRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,25 +85,25 @@ public class TilføjMedlem extends javax.swing.JFrame {
             }
         });
 
-        aktivPassivButtonGroup.add(passivRadioButton);
+        buttonGroup1.add(passivRadioButton);
         passivRadioButton.setText("Passiv");
 
         jLabel2.setText("Eller");
 
-        juniorSeniorbuttonGroup.add(juniorRadioButton);
+        buttonGroup1.add(juniorRadioButton);
         juniorRadioButton.setText("Juniorsvømmer");
 
         jLabel3.setText("Eller");
 
-        juniorSeniorbuttonGroup.add(seniorRadioButton);
+        buttonGroup1.add(seniorRadioButton);
         seniorRadioButton.setText("Seniorsvømmer");
 
-        motionKSvømmerButtonGroup.add(motionistRadioButton);
+        buttonGroup1.add(motionistRadioButton);
         motionistRadioButton.setText("Motionist");
 
         jLabel4.setText("Eller");
 
-        motionKSvømmerButtonGroup.add(kSvømmerRadioButton);
+        buttonGroup1.add(kSvømmerRadioButton);
         kSvømmerRadioButton.setText("Konkurrencesvømmer");
 
         tilføjMedlemButton.setText("Tilføj");
@@ -234,6 +235,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
+                try{
         String name = navnTextField.getText();
 
         String getAge = alderTextField.getText();
@@ -246,12 +248,19 @@ public class TilføjMedlem extends javax.swing.JFrame {
         AllMembers c = new AllMembers();
         Member member = c.createMember(name, age, Id);
         c.addMember(member);
+        JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+        } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde tal");
+        } catch(IllegalArgumentException ex){
+            JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde positive tal");
+        }
         //System.out.println(member);
 //            member.addMember(name, age);
         JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
-
+        buttonGroup1.clearSelection();
         navnTextField.setText(null);
         alderTextField.setText(null);
+        Txt_Id.setText(null);
         
         aktivRadioButton.setSelected(false);
         passivRadioButton.setSelected(false);
@@ -333,6 +342,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private javax.swing.ButtonGroup aktivPassivButtonGroup;
     private javax.swing.JRadioButton aktivRadioButton;
     private javax.swing.JTextField alderTextField;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
