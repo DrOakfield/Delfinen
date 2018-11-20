@@ -5,6 +5,8 @@
  */
 package delfinen.presentation;
 
+import static com.sun.corba.se.impl.util.Utility.printStackTrace;
+import delfinen.data.ReadWrite;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logic.AllMembers;
@@ -21,6 +23,7 @@ public class SletMedlem extends javax.swing.JFrame {
      */
     Member a;
     AllMembers b;
+    ReadWrite RW;
     
     public SletMedlem(Member a, AllMembers b) {
         this.a = a;
@@ -137,7 +140,9 @@ public class SletMedlem extends javax.swing.JFrame {
         int SelectedRowIndex = jTable1.getSelectedRow();
         model.removeRow(SelectedRowIndex);
         b.showAllMembers().remove(SelectedRowIndex);
+        RW.write(b.showAllMembers());
         }catch(Exception ex){
+//            printStackTrace();
             JOptionPane.showMessageDialog(null, "Vælg et medlem");
         }
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
