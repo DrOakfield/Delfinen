@@ -5,6 +5,7 @@
  */
 package delfinen.presentation;
 
+import javax.swing.JOptionPane;
 import logic.AllMembers;
 import logic.Member;
 
@@ -245,6 +246,20 @@ public class TilføjMedlem extends javax.swing.JFrame {
         AllMembers c = new AllMembers();
         Member member = c.createMember(name, age, Id);
         c.addMember(member);
+        //System.out.println(member);
+//            member.addMember(name, age);
+        JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+
+        navnTextField.setText(null);
+        alderTextField.setText(null);
+        
+        aktivRadioButton.setSelected(false);
+        passivRadioButton.setSelected(false);
+        juniorRadioButton.setSelected(false);
+        seniorRadioButton.setSelected(false);
+        motionistRadioButton.setSelected(false);
+        kSvømmerRadioButton.setSelected(false);
+         
         //System.out.println(member);
 //            member.addMember(name, age);
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
