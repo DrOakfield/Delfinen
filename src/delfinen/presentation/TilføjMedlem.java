@@ -38,7 +38,6 @@ public class TilføjMedlem extends javax.swing.JFrame {
         passivRadioButton.setSelected(false);
         motionistRadioButton.setSelected(false);
         kSvømmerRadioButton.setSelected(false);
-
     }
 
     /**
@@ -270,20 +269,12 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
             }
             
-          
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde tal");
         } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde positive tal");
         }
-    
-        //System.out.println(member);
-//            member.addMember(name, age);
-   
 
-         
-        //System.out.println(member);
-//            member.addMember(name, age);
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
 
     private void aktivRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivRadioButtonActionPerformed
