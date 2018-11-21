@@ -25,7 +25,7 @@ public class Medlemsliste extends javax.swing.JFrame {
     public int Id;
     Member a;
     AllMembers b;
-    TilføjMedlem tM;
+    
     
     public Medlemsliste(Member a, AllMembers b) {
         this.a = a;
@@ -35,14 +35,14 @@ public class Medlemsliste extends javax.swing.JFrame {
     }
     public void addRowToJTable(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        Object rowData[] = new Object[3];
+        Object rowData[] = new Object[6];
         for (int i = 0; i < b.showAllMembers().size(); i++) {
             rowData[0] = b.showAllMembers().get(i).getName();
             rowData[1] = b.showAllMembers().get(i).getAge();
             rowData[2] = b.showAllMembers().get(i).getId();
-//            rowData[3] = 
-//            rowData[4] = b.showAllMembers().get(i).getId();
-//            rowData[5] = b.showAllMembers().get(i).getId();
+            rowData[3] = b.showAllMembers().get(i).getAktiv();
+            rowData[4] = b.showAllMembers().get(i).getjES();
+            rowData[5] = b.showAllMembers().get(i).getKonSvøm();
             model.addRow(rowData);
         }
     }
@@ -102,7 +102,7 @@ public class Medlemsliste extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 2, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -110,7 +110,7 @@ public class Medlemsliste extends javax.swing.JFrame {
                         .addComponent(tilbageButton)
                         .addGap(249, 249, 249)
                         .addComponent(jLabel1)
-                        .addGap(0, 353, Short.MAX_VALUE)))
+                        .addGap(0, 285, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
