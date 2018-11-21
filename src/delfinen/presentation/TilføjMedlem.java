@@ -290,7 +290,19 @@ public class TilføjMedlem extends javax.swing.JFrame {
     }//GEN-LAST:event_tilbageButtonActionPerformed
 
     private void navnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navnTextFieldActionPerformed
-        // TODO add your handling code here:
+
+     
+    }
+    
+      
+        
+        public boolean falsk(String text){
+               
+        text = navnTextField.getText();{
+        if (!text.matches("^[a-zA-Z]+$"))
+            
+             {return false;}}
+        return true;
     }//GEN-LAST:event_navnTextFieldActionPerformed
 
     private void jLabel5AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorMoved
