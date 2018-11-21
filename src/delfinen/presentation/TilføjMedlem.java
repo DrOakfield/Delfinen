@@ -237,23 +237,39 @@ public class TilføjMedlem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
-                try{
-        String name = navnTextField.getText();
+        try {
+            String aktiv = "";
+            String jES = "Junior";
+            String konSvøm = "";
+            String name = navnTextField.getText();
 
-        String getAge = alderTextField.getText();
-        int age = Integer.parseInt(getAge);
-        
-        // convert text to int, to get id
-        String getId = Txt_Id.getText();
-        int Id = Integer.parseInt(getId);
+            String getAge = alderTextField.getText();
+            int age = Integer.parseInt(getAge);
 
-        AllMembers c = new AllMembers();
-        Member member = c.createMember(name, age, Id);
-        c.addMember(member);
-        JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
-        } catch(NumberFormatException ex){
+            // convert text to int, to get id
+            String getId = Txt_Id.getText();
+            int Id = Integer.parseInt(getId);
+
+            if (aktivRadioButton.isEnabled()) {
+                aktiv = "Ja";
+            }
+            if (age > 17) {
+                jES = "Senior";
+            }
+            if (kSvømmerRadioButton.isEnabled()) {
+                konSvøm = "Ja";
+            }
+            if (motionistRadioButton.isEnabled()) {
+                konSvøm = "Nej";
+            }
+            
+            AllMembers c = new AllMembers();
+            Member member = c.createMember(name, age, Id, aktiv, jES, konSvøm);
+            c.addMember(member);
+            JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+        } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde tal");
-        } catch(IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde positive tal");
         }
         //System.out.println(member);
@@ -293,15 +309,15 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
      
     }
-    
-      
-        
-        public boolean falsk(String text){
-               
-        text = navnTextField.getText();{
-        if (!text.matches("^[a-zA-Z]+$"))
-            
-             {return false;}}
+    public boolean falsk(String text) {
+
+        text = navnTextField.getText();
+        if (!text.matches("^[a-zA-Z]+$")) {
+
+            {
+                return false;
+            }
+        }
         return true;
     }//GEN-LAST:event_navnTextFieldActionPerformed
 
