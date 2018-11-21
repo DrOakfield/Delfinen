@@ -5,7 +5,6 @@
  */
 package delfinen.presentation;
 
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import delfinen.data.ReadWrite;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,14 +23,15 @@ public class SletMedlem extends javax.swing.JFrame {
     Member a;
     AllMembers b;
     ReadWrite RW;
-    
+
     public SletMedlem(Member a, AllMembers b) {
         this.a = a;
         this.b = b;
         initComponents();
         addRowToJTable();
     }
-        public void addRowToJTable() {
+
+    public void addRowToJTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         Object rowData[] = new Object[3];
         for (int i = 0; i < b.showAllMembers().size(); i++) {
@@ -41,7 +41,6 @@ public class SletMedlem extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -136,19 +135,21 @@ public class SletMedlem extends javax.swing.JFrame {
 
     private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        try{
-        int SelectedRowIndex = jTable1.getSelectedRow();
-        model.removeRow(SelectedRowIndex);
-        b.showAllMembers().remove(SelectedRowIndex);
-        RW.write(b.showAllMembers());
-        }catch(Exception ex){
-//            printStackTrace();
+        try {
+            int SelectedRowIndex = jTable1.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+            b.showAllMembers().remove(SelectedRowIndex);
+            RW.write(b.showAllMembers());
+        } catch (NullPointerException ex) {
+//            ex.printStackTrace();
+            
+        } catch (ArrayIndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(null, "Vælg et medlem");
         }
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
-        
+
         new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
