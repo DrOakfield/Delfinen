@@ -26,6 +26,20 @@ public class TilføjMedlem extends javax.swing.JFrame {
         this.b = b;
         initComponents();
     }
+    
+    public void reset() {
+        buttonGroup1.clearSelection();
+        buttonGroup3.clearSelection();
+        navnTextField.setText(null);
+        alderTextField.setText(null);
+        Txt_Id.setText(null);
+
+        aktivRadioButton.setSelected(false);
+        passivRadioButton.setSelected(false);
+        motionistRadioButton.setSelected(false);
+        kSvømmerRadioButton.setSelected(false);
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -244,30 +258,29 @@ public class TilføjMedlem extends javax.swing.JFrame {
             if (motionistRadioButton.isSelected()) {
                 konSvøm = "Nej";
             }
+             String text = navnTextField.getText();
+            if (!text.matches("^[a-zA-Z]+$")) {
+                reset();
+                JOptionPane.showMessageDialog(null, "Du kan ikke skrive tal i navnefeltet, fjols!");
+            } else {
+                AllMembers c = new AllMembers();
+                Member member = c.createMember(name, age, Id, aktiv, jES, konSvøm);
+                c.addMember(member);
+                reset();
+                JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+            }
             
-            AllMembers c = new AllMembers();
-            Member member = c.createMember(name, age, Id, aktiv, jES, konSvøm);
-            c.addMember(member);
-            JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
+          
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde tal");
         } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, "Alder/ID kan kun indeholde positive tal");
         }
+    
         //System.out.println(member);
 //            member.addMember(name, age);
-       
-        buttonGroup1.clearSelection();
+   
 
-        buttonGroup3.clearSelection();
-        navnTextField.setText(null);
-        alderTextField.setText(null);
-        Txt_Id.setText(null);
-        
-        aktivRadioButton.setSelected(false);
-        passivRadioButton.setSelected(false);
-        motionistRadioButton.setSelected(false);
-        kSvømmerRadioButton.setSelected(false);
          
         //System.out.println(member);
 //            member.addMember(name, age);
@@ -287,18 +300,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
     private void navnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navnTextFieldActionPerformed
 
-     
-    }
-    public boolean falsk(String text) {
-
-        text = navnTextField.getText();
-        if (!text.matches("^[a-zA-Z]+$")) {
-
-            {
-                return false;
-            }
-        }
-        return true;
+ 
     }//GEN-LAST:event_navnTextFieldActionPerformed
 
     private void jLabel5AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorMoved
