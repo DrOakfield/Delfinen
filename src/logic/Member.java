@@ -8,11 +8,17 @@ public class Member implements Serializable {
     private String Name;
     private int Age;
     private int Id;
+    private String aktiv;
+    private String jES;
+    private String konSvøm;
 
-    public Member(String Name, int Age, int Id) {
+    public Member(String Name, int Age, int Id, String aktiv, String jES, String konSvøm) {
         this.Name = Name;
         this.Age = Age;
         this.Id = Id;
+        this.aktiv = aktiv;
+        this.jES = jES;
+        this.konSvøm = konSvøm;
     }
     
     public String getName() {
@@ -31,7 +37,7 @@ public class Member implements Serializable {
         this.Age = Age;
     }
 
-
+    
     public int getId() {
         return Id;
     }
@@ -39,8 +45,31 @@ public class Member implements Serializable {
     public void setId(int Id) {
         this.Id = Id;
     }
+
+    public String getAktiv() {
+        return aktiv;
+    }
+
+    public void setAktiv(String aktiv) {
+        this.aktiv = aktiv;
+    }
+
+    public String getjES() {
+        return jES;
+    }
+
+    public void setjES(String jES) {
+        this.jES = jES;
+    }
+
+    public String getKonSvøm() {
+        return konSvøm;
+    }
+
+    public void setKonSvøm(String konSvøm) {
+        this.konSvøm = konSvøm;
+    }
  
-    
     @Override
     public String toString() {
         return "Member: " + Name + "," + Age + ", " + Id + "\n";
