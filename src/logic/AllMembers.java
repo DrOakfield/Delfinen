@@ -23,7 +23,7 @@ public class AllMembers {
     }
 
     public List<Member> showAllMembers() {
-//        rw.write(allMembers);
+        rw.write(allMembers);
         return allMembers;
     }
     
