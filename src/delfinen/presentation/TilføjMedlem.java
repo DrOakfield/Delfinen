@@ -48,9 +48,6 @@ public class TilføjMedlem extends javax.swing.JFrame {
         aktivRadioButton = new javax.swing.JRadioButton();
         passivRadioButton = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        juniorRadioButton = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        seniorRadioButton = new javax.swing.JRadioButton();
         motionistRadioButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         kSvømmerRadioButton = new javax.swing.JRadioButton();
@@ -91,14 +88,6 @@ public class TilføjMedlem extends javax.swing.JFrame {
         passivRadioButton.setText("Passiv");
 
         jLabel2.setText("Eller");
-
-        buttonGroup2.add(juniorRadioButton);
-        juniorRadioButton.setText("Juniorsvømmer");
-
-        jLabel3.setText("Eller");
-
-        buttonGroup2.add(seniorRadioButton);
-        seniorRadioButton.setText("Seniorsvømmer");
 
         buttonGroup3.add(motionistRadioButton);
         motionistRadioButton.setText("Motionist");
@@ -148,10 +137,6 @@ public class TilføjMedlem extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(175, 175, 175))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -161,32 +146,33 @@ public class TilføjMedlem extends javax.swing.JFrame {
                             .addComponent(Label_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(navnTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
-                            .addComponent(alderTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                            .addComponent(navnTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                            .addComponent(alderTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
                             .addComponent(Txt_Id)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(tilbageButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tilføjMedlemButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(kSvømmerRadioButton))
-                            .addComponent(jLabel4)
-                            .addComponent(motionistRadioButton)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aktivRadioButton)
+                                .addComponent(tilbageButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tilføjMedlemButton))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(motionistRadioButton)
+                                    .addComponent(aktivRadioButton))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(passivRadioButton))
-                        .addGap(59, 59, 59)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seniorRadioButton)
-                            .addComponent(juniorRadioButton)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(passivRadioButton)
+                            .addComponent(kSvømmerRadioButton))))
                 .addGap(104, 104, 104))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel5, jLabel6});
@@ -194,9 +180,9 @@ public class TilføjMedlem extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(navnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -208,21 +194,16 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Txt_Id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Label_Id))
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aktivRadioButton)
-                    .addComponent(juniorRadioButton)
-                    .addComponent(motionistRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(3, 3, 3)
+                    .addComponent(passivRadioButton))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passivRadioButton)
-                    .addComponent(seniorRadioButton)
-                    .addComponent(kSvømmerRadioButton))
+                    .addComponent(kSvømmerRadioButton)
+                    .addComponent(jLabel4)
+                    .addComponent(motionistRadioButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tilføjMedlemButton)
@@ -238,9 +219,10 @@ public class TilføjMedlem extends javax.swing.JFrame {
 
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         try {
-            String aktiv = "";
+            String aktiv = "Nej";
             String jES = "Junior";
             String konSvøm = "";
+            
             String name = navnTextField.getText();
 
             String getAge = alderTextField.getText();
@@ -250,16 +232,16 @@ public class TilføjMedlem extends javax.swing.JFrame {
             String getId = Txt_Id.getText();
             int Id = Integer.parseInt(getId);
 
-            if (aktivRadioButton.isEnabled()) {
+            if (aktivRadioButton.isSelected()) {
                 aktiv = "Ja";
             }
             if (age > 17) {
                 jES = "Senior";
             }
-            if (kSvømmerRadioButton.isEnabled()) {
+            if (kSvømmerRadioButton.isSelected()) {
                 konSvøm = "Ja";
             }
-            if (motionistRadioButton.isEnabled()) {
+            if (motionistRadioButton.isSelected()) {
                 konSvøm = "Nej";
             }
             
@@ -276,7 +258,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
 //            member.addMember(name, age);
        
         buttonGroup1.clearSelection();
-        buttonGroup2.clearSelection();
+
         buttonGroup3.clearSelection();
         navnTextField.setText(null);
         alderTextField.setText(null);
@@ -284,8 +266,6 @@ public class TilføjMedlem extends javax.swing.JFrame {
         
         aktivRadioButton.setSelected(false);
         passivRadioButton.setSelected(false);
-        juniorRadioButton.setSelected(false);
-        seniorRadioButton.setSelected(false);
         motionistRadioButton.setSelected(false);
         kSvømmerRadioButton.setSelected(false);
          
@@ -379,18 +359,15 @@ public class TilføjMedlem extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton juniorRadioButton;
     private javax.swing.ButtonGroup juniorSeniorbuttonGroup;
     private javax.swing.JRadioButton kSvømmerRadioButton;
     private javax.swing.ButtonGroup motionKSvømmerButtonGroup;
     private javax.swing.JRadioButton motionistRadioButton;
     private javax.swing.JTextField navnTextField;
     private javax.swing.JRadioButton passivRadioButton;
-    private javax.swing.JRadioButton seniorRadioButton;
     private javax.swing.JButton tilbageButton;
     private javax.swing.JButton tilføjMedlemButton;
     // End of variables declaration//GEN-END:variables
