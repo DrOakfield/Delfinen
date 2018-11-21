@@ -13,8 +13,8 @@ public class AllMembers {
         allMembers = new ReadWrite().readObject();
     }
 
-    public Member createMember(String name, int age, int Id) {
-        return new Member(name, age, Id);
+    public Member createMember(String name, int age, int Id, String aktiv, String jES, String konSvøm) {
+        return new Member(name, age, Id, aktiv, jES, konSvøm);
     }
 
     public void addMember(Member member) {
@@ -23,8 +23,8 @@ public class AllMembers {
     }
 
     public List<Member> showAllMembers() {
-//        rw.write(allMembers);
+        rw.write(allMembers);
         return allMembers;
     }
-    
+    // ".*\\d+.*"
 }

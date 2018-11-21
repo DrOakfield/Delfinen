@@ -25,6 +25,7 @@ public class Medlemsliste extends javax.swing.JFrame {
     public int Id;
     Member a;
     AllMembers b;
+    TilføjMedlem tM;
     
     public Medlemsliste(Member a, AllMembers b) {
         this.a = a;
@@ -39,6 +40,9 @@ public class Medlemsliste extends javax.swing.JFrame {
             rowData[0] = b.showAllMembers().get(i).getName();
             rowData[1] = b.showAllMembers().get(i).getAge();
             rowData[2] = b.showAllMembers().get(i).getId();
+//            rowData[3] = 
+//            rowData[4] = b.showAllMembers().get(i).getId();
+//            rowData[5] = b.showAllMembers().get(i).getId();
             model.addRow(rowData);
         }
     }
@@ -77,26 +81,37 @@ public class Medlemsliste extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Fulde navn", "Alder", "ID"
+                "Fulde navn", "Alder", "ID", "Aktiv", "Junior eller Senior", "Konkurrencesvømmer"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(1).setMinWidth(60);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(60);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(60);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(60);
+            jTable1.getColumnModel().getColumn(3).setMinWidth(60);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(60);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jSeparator1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(tilbageButton)
-                .addGap(58, 58, 58)
-                .addComponent(jLabel1)
-                .addGap(30, 179, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 2, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tilbageButton)
+                        .addGap(249, 249, 249)
+                        .addComponent(jLabel1)
+                        .addGap(0, 353, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
