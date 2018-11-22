@@ -11,15 +11,15 @@ package logic;
  */
 public class Kontingent {
 
-    private final Member a;
-    private final AllMembers b;
+    private final Member mem;
+    private final AllMembers aMem;
     // Resultat for kontigentUdregner
     private double resultat;
     private int kontingent;
 
     public Kontingent(Member a, AllMembers b) {
-        this.a = a;
-        this.b = b;
+        this.mem = a;
+        this.aMem = b;
     }
 
     // aktivitetsform 0 = pasiv , 1 = aktiv
