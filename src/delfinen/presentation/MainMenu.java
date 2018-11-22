@@ -6,6 +6,7 @@
 package delfinen.presentation;
 
 import logic.AllMembers;
+import logic.Kontingent;
 import logic.Member;
 
 /**
@@ -21,8 +22,9 @@ public class MainMenu extends javax.swing.JFrame {
      */
     Member a;
     AllMembers b;
+  // Kontingent c;
     
-    public MainMenu(Member a, AllMembers b) {
+    public MainMenu(Member a, AllMembers b/*, Kontingent c*/) {
         this.a = a;
         this.b = b;
         initComponents();
@@ -115,7 +117,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_formandButtonActionPerformed
 
     private void kassererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kassererButtonActionPerformed
-        new KassererMenu(a, b).setVisible(true);
+        //new KassererMenu(a, b /* ,c*/).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_kassererButtonActionPerformed
 
