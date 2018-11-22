@@ -17,12 +17,12 @@ public class FormandMenu extends javax.swing.JFrame {
     /**
      * Creates new form FormandMenu
      */
-    Member a;
-    AllMembers b;
+    Member mem;
+    AllMembers aMem;
     
     public FormandMenu(Member a, AllMembers b) {
-        this.a = a;
-        this.b = b;
+        this.mem = a;
+        this.aMem = b;
         initComponents();
     }
 
@@ -128,7 +128,7 @@ public class FormandMenu extends javax.swing.JFrame {
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         // TODO add your handling code here:
         
-        new FormandTilføjMedlem(a, b).setVisible(true);
+        new FormandTilføjMedlem(mem, aMem).setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
@@ -136,21 +136,21 @@ public class FormandMenu extends javax.swing.JFrame {
     private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
         // TODO add your handling code here:
         
-        new FormandSletMedlem(a, b).setVisible(true);
+        new FormandSletMedlem(mem, aMem).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     private void visMedlemslisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemslisteButtonActionPerformed
         // TODO add your handling code here:
         
-        new FormandMedlemsliste(a, b).setVisible(true);
+        new FormandMedlemsliste(mem, aMem).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_visMedlemslisteButtonActionPerformed
 
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
         
-        new MainMenu(a, b).setVisible(true);
+        new MainMenu(mem, aMem).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
 
