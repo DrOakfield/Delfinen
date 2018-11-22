@@ -21,7 +21,7 @@ public class Delfinen {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Member m1 = new Member("Mogens", 22, 2, "Ja", "Senior", "Ja");
+        Member m1 = new Member("Mogens", 22, 2, true, "Ja", "Senior", "Ja");
         AllMembers am = new AllMembers();
         MainMenu mm = new MainMenu(m1, am);
         mm.setVisible(true);
