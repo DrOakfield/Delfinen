@@ -10,14 +10,19 @@ public class AllMembers {
     private static List<Member> allMembers = new ArrayList<>();
     private static List<Member> MedlemsRestance = new ArrayList<>();
 
-    static {
-        allMembers = new ReadWrite().readObject();
-        MedlemsRestance = new ReadWrite().readObject();
-    }
+//    static {
+//        allMembers = new ReadWrite().readObject();
+//        MedlemsRestance = new ReadWrite().readObject();
+//    }
 
-    public Member createMember(String name, int age, int Id, String aktiv, String jES, String konSvøm) {
+    public Member createMember(String name, int age, int Id, boolean aktiv, String jES, String konSvøm) {
         return new Member(name, age, Id, aktiv, jES, konSvøm);
     }
+    
+    public Member createMember(String name, int age, int Id, String aktivTekst, String jES, String konSvøm) {
+        return new Member(name, age, Id, aktivTekst, jES, konSvøm);
+    }
+    
 
     public void addMember(Member member) {
         //add til medlemsoversigt
