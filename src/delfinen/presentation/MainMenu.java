@@ -20,13 +20,13 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      */
-    Member a;
-    AllMembers b;
+    Member mem;
+    AllMembers aMem;
   // Kontingent c;
     
     public MainMenu(Member a, AllMembers b/*, Kontingent c*/) {
-        this.a = a;
-        this.b = b;
+        this.mem = a;
+        this.aMem = b;
         initComponents();
 
     }
@@ -112,12 +112,12 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
 
-        new FormandMenu(a, b).setVisible(true);
+        new FormandMenu(mem, aMem).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_formandButtonActionPerformed
 
     private void kassererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kassererButtonActionPerformed
-        //new KassererMenu(a, b /* ,c*/).setVisible(true);
+        //new KassererMenu(mem, aMem /* ,c*/).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_kassererButtonActionPerformed
 
@@ -151,7 +151,7 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-//                new MainMenu(a).setVisible(true);
+//                new MainMenu(mem).setVisible(true);
             }
         });
     }
