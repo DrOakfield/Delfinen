@@ -258,7 +258,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
                 konSvøm = "Nej";
             }
              String text = navnTextField.getText();
-            if (!text.matches("^[a-zA-Z]+$" )) {
+            if (text.matches(".*\\d+.*" )) {
                 reset();
                 JOptionPane.showMessageDialog(null, "Du kan ikke skrive tal i navnefeltet");
             } else {
