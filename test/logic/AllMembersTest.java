@@ -47,12 +47,13 @@ public class AllMembersTest {
         String name = "Karl Johansen";
         int age = 17;
         int id = 1;
-        String aktiv = "Ja";
+        boolean aktiv = true;
+        String aktivTekst = "Ja";
         String jES = "Junior";
         String konSvøm = "Ja";
         AllMembers instance = new AllMembers();
         Member expResult = null;
-        Member result = instance.createMember(name, age, id, aktiv, jES, konSvøm);
+        Member result = instance.createMember(name, age, id, aktiv, aktivTekst, jES, konSvøm);
         assertEquals(expResult, result);
         fail("The test case is a prototype.");
     }
