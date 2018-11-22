@@ -32,7 +32,6 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
         buttonGroup3.clearSelection();
         navnTextField.setText(null);
         alderTextField.setText(null);
-        Txt_Id.setText(null);
 
         aktivRadioButton.setSelected(false);
         passivRadioButton.setSelected(false);
@@ -68,8 +67,6 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
         tilbageButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        Label_Id = new javax.swing.JLabel();
-        Txt_Id = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tilføj Medlem");
@@ -137,32 +134,23 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
 
         jLabel6.setText("Alder");
 
-        Label_Id.setText("Id");
-
-        Txt_Id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_IdActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(navnTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                            .addComponent(alderTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                            .addComponent(Txt_Id)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(alderTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
+                        .addGap(104, 104, 104))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(tilbageButton)
@@ -173,15 +161,15 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(motionistRadioButton)
                                     .addComponent(aktivRadioButton))))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passivRadioButton)
-                            .addComponent(kSvømmerRadioButton))))
-                .addGap(104, 104, 104))
+                            .addComponent(kSvømmerRadioButton))
+                        .addGap(69, 69, 69))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(219, 219, 219)
                 .addComponent(jLabel1)
@@ -199,25 +187,21 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(navnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Txt_Id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_Id))
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aktivRadioButton)
-                    .addComponent(jLabel2)
-                    .addComponent(passivRadioButton))
+                    .addComponent(passivRadioButton)
+                    .addComponent(jLabel2))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kSvømmerRadioButton)
                     .addComponent(jLabel4)
                     .addComponent(motionistRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tilføjMedlemButton)
                     .addComponent(tilbageButton))
@@ -243,9 +227,9 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
             int age = Integer.parseInt(getAge);
 
             // convert text to int, to get id
-            String getId = Txt_Id.getText();
-            int Id = Integer.parseInt(getId);
-
+            
+            int Id = aMem.readID() + 1;
+            
             if (aktivRadioButton.isSelected()) {
                 aktiv = true;
                 aktivTekst = "Aktiv";
@@ -268,6 +252,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
                 AllMembers c = new AllMembers();
                 Member member = c.createMember(name, age, Id, aktiv, aktivTekst, jES, konSvøm);
                 c.addMember(member);
+                aMem.writeID(Id);
                 reset();
                 JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
             }
@@ -300,10 +285,6 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
     private void jLabel5AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5AncestorMoved
-
-    private void Txt_IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_IdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_IdActionPerformed
 
     private void alderTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alderTextFieldActionPerformed
         // TODO add your handling code here:
@@ -346,8 +327,6 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_Id;
-    private javax.swing.JTextField Txt_Id;
     private javax.swing.ButtonGroup aktivPassivButtonGroup;
     private javax.swing.JRadioButton aktivRadioButton;
     private javax.swing.JTextField alderTextField;
