@@ -8,15 +8,24 @@ public class Member implements Serializable {
     private String Name;
     private int Age;
     private int Id;
-    private String aktiv;
+    private boolean aktiv;
+    private String aktivTekst;
     private String jES;
     private String konSvøm;
 
-    public Member(String Name, int Age, int Id, String aktiv, String jES, String konSvøm) {
+    public Member(String Name, int Age, int Id, boolean aktiv, String jES, String konSvøm) {
         this.Name = Name;
         this.Age = Age;
         this.Id = Id;
         this.aktiv = aktiv;
+        this.jES = jES;
+        this.konSvøm = konSvøm;
+    }
+    public Member(String Name, int Age, int Id, String aktiv, String jES, String konSvøm) {
+        this.Name = Name;
+        this.Age = Age;
+        this.Id = Id;
+        this.aktivTekst = aktivTekst;
         this.jES = jES;
         this.konSvøm = konSvøm;
     }
@@ -46,12 +55,20 @@ public class Member implements Serializable {
         this.Id = Id;
     }
 
-    public String getAktiv() {
+    public boolean getAktiv() {
         return aktiv;
     }
 
-    public void setAktiv(String aktiv) {
+    public void setAktiv(boolean aktiv) {
         this.aktiv = aktiv;
+    }
+
+    public String getAktivTekst() {
+        return aktivTekst;
+    }
+
+    public void setAktivTekst(String aktivTekst) {
+        this.aktivTekst = aktivTekst;
     }
 
     public String getjES() {
