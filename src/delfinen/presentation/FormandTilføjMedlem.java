@@ -18,12 +18,12 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
     /**
      * Creates new form TilføjMedlem
      */
-    Member a;
-    AllMembers b;
+    Member mem;
+    AllMembers aMem;
     
     public FormandTilføjMedlem(Member a, AllMembers b) {
-        this.a = a;
-        this.b = b;
+        this.mem = a;
+        this.aMem = b;
         initComponents();
     }
     
@@ -285,7 +285,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        new FormandMenu(a, b).setVisible(true);
+        new FormandMenu(mem, aMem).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_tilbageButtonActionPerformed
 
