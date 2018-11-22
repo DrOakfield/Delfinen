@@ -13,18 +13,11 @@ public class Member implements Serializable {
     private String jES;
     private String konSvøm;
 
-    public Member(String Name, int Age, int Id, boolean aktiv, String jES, String konSvøm) {
+    public Member(String Name, int Age, int Id, boolean aktiv, String aktivTekst, String jES, String konSvøm) {
         this.Name = Name;
         this.Age = Age;
         this.Id = Id;
         this.aktiv = aktiv;
-        this.jES = jES;
-        this.konSvøm = konSvøm;
-    }
-    public Member(String Name, int Age, int Id, String aktiv, String jES, String konSvøm) {
-        this.Name = Name;
-        this.Age = Age;
-        this.Id = Id;
         this.aktivTekst = aktivTekst;
         this.jES = jES;
         this.konSvøm = konSvøm;
