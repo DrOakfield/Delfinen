@@ -19,25 +19,25 @@ public class KassererRestance extends javax.swing.JFrame {
     private String fullName;
     private int age;
     private int Id;
-    Member a;
-    AllMembers b;
-    Kontingent C;
+    Member mem;
+    AllMembers aMem;
+    Kontingent kon;
     
     public KassererRestance(Member a, AllMembers b, Kontingent c) {
-        this.a = a;
-        this.b = b;
-        this.C = c;
+        this.mem = a;
+        this.aMem = b;
+        this.kon = c;
         initComponents();
     }
     
     public void updateTable(){
         DefaultTableModel Tabel = (DefaultTableModel) Table_Restance.getModel();
-        Object rowData[] = new Object[3];
-        for (int i = 0; i < b.showAllMembers().size(); i++) {
-            rowData[0] = b.showRestanceOversigt().get(i).getName();
-            rowData[1] = b.showRestanceOversigt().get(i).getAge();
-            rowData[2] = b.showRestanceOversigt().get(i).getId();
-            rowData[3] = b.showRestanceOversigt().get(i).;
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < aMem.showAllMembers().size(); i++) {
+            rowData[0] = aMem.showRestanceOversigt().get(i).getName();
+            rowData[1] = aMem.showRestanceOversigt().get(i).getAge();
+            rowData[2] = aMem.showRestanceOversigt().get(i).getId();
+            rowData[3] = aMem.showRestanceOversigt().get(i).;
             Tabel.addRow(rowData);
         }
     }
