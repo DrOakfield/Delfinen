@@ -17,7 +17,8 @@ public class ReadWrite {
     ObjectOutputStream out;
     private static final boolean DEBUG = true;
     private String MemberList = "./MemberList.txt";                                                    //"C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
-
+    private String MedlemsRestance = "./MedlemsRestance.txt";
+    
     public void write(List<Member> ListOfMembers) {
         
         try {
@@ -47,6 +48,66 @@ public class ReadWrite {
          // skal denne ikke sættes under class og ikke undlades en værdi?
         try {
             File file = new File(MemberList);
+            in = new ObjectInputStream(new FileInputStream(file));
+            List<Member> p = (List<Member>) in.readObject();
+            for (Member m : p) {
+                System.out.println(m);
+            }
+            return p;
+        } catch (FileNotFoundException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+            {
+                System.out.println("prøv læs1 senere");
+            }
+        } catch (IOException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+            {
+                System.out.println("prøv læs2 senere");
+            }
+        } catch (ClassNotFoundException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+            {
+                System.out.println("prøv læs3 senere");
+            }
+        }
+        return null;
+    }
+    
+    public void writeMRestance(List<Member> ListOfMembers) {
+        
+        try {
+            File file = new File(MedlemsRestance);
+            out = new ObjectOutputStream(new FileOutputStream(file));
+//            out = new ObjectOutputStream(new FileOutputStream(MemberList));
+            out.writeObject(ListOfMembers);
+            out.flush();
+        } catch (FileNotFoundException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+            {
+                System.out.println("prøv skriv1 senere");
+            }
+        } catch (IOException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+            {
+                System.out.println("prøv skriv2 senere");
+            }
+        }
+    }
+
+    public List<Member> readObjectMRestance() {
+         // skal denne ikke sættes under class og ikke undlades en værdi?
+        try {
+            File file = new File(MedlemsRestance);
             in = new ObjectInputStream(new FileInputStream(file));
             List<Member> p = (List<Member>) in.readObject();
             for (Member m : p) {
