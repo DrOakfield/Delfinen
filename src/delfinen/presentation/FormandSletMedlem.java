@@ -15,7 +15,7 @@ import logic.Member;
  *
  * @author Mads Egevang Jensen
  */
-public class SletMedlem extends javax.swing.JFrame {
+public class FormandSletMedlem extends javax.swing.JFrame {
 
     /**
      * Creates new form SletMedlem
@@ -24,7 +24,7 @@ public class SletMedlem extends javax.swing.JFrame {
     AllMembers b;
     ReadWrite RW;
 
-    public SletMedlem(Member a, AllMembers b) {
+    public FormandSletMedlem(Member a, AllMembers b) {
         this.a = a;
         this.b = b;
         initComponents();
@@ -171,14 +171,15 @@ public class SletMedlem extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandSletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandSletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandSletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandSletMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

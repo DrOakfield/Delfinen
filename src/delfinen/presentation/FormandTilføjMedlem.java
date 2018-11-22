@@ -13,7 +13,7 @@ import logic.Member;
  *
  * @author Mads Egevang Jensen
  */
-public class TilføjMedlem extends javax.swing.JFrame {
+public class FormandTilføjMedlem extends javax.swing.JFrame {
 
     /**
      * Creates new form TilføjMedlem
@@ -21,7 +21,7 @@ public class TilføjMedlem extends javax.swing.JFrame {
     Member a;
     AllMembers b;
     
-    public TilføjMedlem(Member a, AllMembers b) {
+    public FormandTilføjMedlem(Member a, AllMembers b) {
         this.a = a;
         this.b = b;
         initComponents();
@@ -258,9 +258,9 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 konSvøm = "Nej";
             }
              String text = navnTextField.getText();
-            if (!text.matches("^[a-zA-Z]+$")) {
+            if (!text.matches("^[a-zA-Z]+$" )) {
                 reset();
-                JOptionPane.showMessageDialog(null, "Du kan ikke skrive tal i navnefeltet, fjols!");
+                JOptionPane.showMessageDialog(null, "Du kan ikke skrive tal i navnefeltet");
             } else {
                 AllMembers c = new AllMembers();
                 Member member = c.createMember(name, age, Id, aktiv, jES, konSvøm);
@@ -323,14 +323,15 @@ public class TilføjMedlem extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandTilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandTilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandTilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormandTilføjMedlem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -8,9 +8,11 @@ public class AllMembers {
     ReadWrite rw = new ReadWrite();
 
     private static List<Member> allMembers = new ArrayList<>();
+    private static List<Member> MedlemsRestance = new ArrayList<>();
 
     static {
         allMembers = new ReadWrite().readObject();
+        MedlemsRestance = new ReadWrite().readObject();
     }
 
     public Member createMember(String name, int age, int Id, String aktiv, String jES, String konSvøm) {
@@ -18,8 +20,12 @@ public class AllMembers {
     }
 
     public void addMember(Member member) {
+        //add til medlemsoversigt
         allMembers.add(member);
         rw.write(allMembers);
+        //add til restanceOversigt
+        MedlemsRestance.add(member);
+        rw.write(MedlemsRestance);
     }
 
     public List<Member> showAllMembers() {
@@ -27,4 +33,10 @@ public class AllMembers {
         return allMembers;
     }
     // ".*\\d+.*"
+    
+    public List<Member> showRestanceOversigt(){
+        rw.write(MedlemsRestance);
+        return MedlemsRestance;
+    }
+    
 }

@@ -20,13 +20,14 @@ import logic.Member;
  * @author Christian Ambjørn Kehr
  */
 public class ReadWriteRestance {
-     ObjectInputStream in;
+
+    ObjectInputStream in;
     ObjectOutputStream out;
     private static final boolean DEBUG = true;
     private String RestanceList = "./RestanceList.txt";                                                    //"C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\RestanceList";
 
     public void write(List<Member> ListOfRestance) {
-        
+
         try {
             File file = new File(RestanceList);
             out = new ObjectOutputStream(new FileOutputStream(file));
@@ -51,7 +52,7 @@ public class ReadWriteRestance {
     }
 
     public List<Member> readObject() {
-         // skal denne ikke sættes under class og ikke undlades en værdi?
+        // skal denne ikke sættes under class og ikke undlades en værdi?
         try {
             File file = new File(RestanceList);
             in = new ObjectInputStream(new FileInputStream(file));
@@ -84,6 +85,5 @@ public class ReadWriteRestance {
         }
         return null;
     }
-    
-    
+
 }

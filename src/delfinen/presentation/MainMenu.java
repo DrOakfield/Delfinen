@@ -61,6 +61,11 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         kassererButton.setText("Kasserer");
+        kassererButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kassererButtonActionPerformed(evt);
+            }
+        });
 
         trænerButton.setText("Træner");
         trænerButton.setMaximumSize(new java.awt.Dimension(83, 32));
@@ -108,6 +113,11 @@ public class MainMenu extends javax.swing.JFrame {
         new FormandMenu(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_formandButtonActionPerformed
+
+    private void kassererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kassererButtonActionPerformed
+        new KassererMenu(a, b).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_kassererButtonActionPerformed
 
     /**
      * @param args the command line arguments

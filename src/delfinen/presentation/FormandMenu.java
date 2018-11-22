@@ -128,7 +128,7 @@ public class FormandMenu extends javax.swing.JFrame {
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         // TODO add your handling code here:
         
-        new TilføjMedlem(a, b).setVisible(true);
+        new FormandTilføjMedlem(a, b).setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_tilføjMedlemButtonActionPerformed
@@ -136,14 +136,14 @@ public class FormandMenu extends javax.swing.JFrame {
     private void sletMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sletMedlemButtonActionPerformed
         // TODO add your handling code here:
         
-        new SletMedlem(a, b).setVisible(true);
+        new FormandSletMedlem(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_sletMedlemButtonActionPerformed
 
     private void visMedlemslisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visMedlemslisteButtonActionPerformed
         // TODO add your handling code here:
         
-        new Medlemsliste(a, b).setVisible(true);
+        new FormandMedlemsliste(a, b).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_visMedlemslisteButtonActionPerformed
 
