@@ -51,8 +51,8 @@ public class Kontingent {
         return resultat;
     }
     
-    public double Kontingent(){
-        kontingent = kontingentUdregner(resultat, aktiv);
-        return kontingent;
-    }
+//    public double Kontingent(){
+//        kontingent = kontingentUdregner(resultat, aktiv);
+//        return kontingent;
+//    }
 }
