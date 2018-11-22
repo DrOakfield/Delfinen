@@ -40,7 +40,7 @@ public class FormandMedlemsliste extends javax.swing.JFrame {
             rowData[0] = aMem.showAllMembers().get(i).getName();
             rowData[1] = aMem.showAllMembers().get(i).getAge();
             rowData[2] = aMem.showAllMembers().get(i).getId();
-            rowData[3] = aMem.showAllMembers().get(i).getAktiv();
+            rowData[3] = aMem.showAllMembers().get(i).getAktivTekst();
             rowData[4] = aMem.showAllMembers().get(i).getjES();
             rowData[5] = aMem.showAllMembers().get(i).getKonSvøm();
             model.addRow(rowData);
