@@ -1,10 +1,14 @@
 
 package delfinen.data;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,9 +20,14 @@ public class ReadWrite {
     ObjectInputStream in;
     ObjectOutputStream out;
     private static final boolean DEBUG = true;
-    private String MemberList = "./MemberList.txt";                                                    //"C:\\Users\\Bruger\\Documents\\NetBeansProjects\\Delfinen\\src\\data\\MemberList";
+    private String MemberList = "./MemberList.txt";
     private String MedlemsRestance = "./MedlemsRestance.txt";
+    private String IDListe = "./ID.txt";
     
+    /**
+     * Writes list of members to file
+     * @param ListOfMembers 
+     */
     public void write(List<Member> ListOfMembers) {
         
         try {
@@ -44,6 +53,10 @@ public class ReadWrite {
         }
     }
 
+    /**
+     * Reads list of objects from memberList
+     * @return 
+     */
     public List<Member> readObject() {
          // skal denne ikke sættes under class og ikke undlades en værdi?
         try {
@@ -79,6 +92,10 @@ public class ReadWrite {
         return null;
     }
     
+    /**
+     * Writes List of members in restance
+     * @param ListOfMembers 
+     */
     public void writeMRestance(List<Member> ListOfMembers) {
         
         try {
@@ -103,9 +120,13 @@ public class ReadWrite {
             }
         }
     }
-
+    
+    /**
+     * Reads Objects from list of members in restance
+     * @return 
+     */
     public List<Member> readObjectMRestance() {
-         // skal denne ikke sættes under class og ikke undlades en værdi?
+        // skal denne ikke sættes under class og ikke undlades en værdi?
         try {
             File file = new File(MedlemsRestance);
             in = new ObjectInputStream(new FileInputStream(file));
@@ -139,5 +160,53 @@ public class ReadWrite {
         return null;
     }
     
+    /**
+     * Writes id's of members in a file
+     * @param ID 
+     */
+    public void writeWithBufferedWriter(int ID) {
+        BufferedWriter out = null;
+        try {
+            File file = new File(IDListe);
+            out = new BufferedWriter(new FileWriter(file));
+            out.write(Integer.toString(ID));
+            out.flush();
+        } catch (IOException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+        } finally {
+            try {
+                out.close();
+            } catch (IOException ex) {
+                if (DEBUG) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+    }
     
+    /**
+     * Reads list of member id's
+     * @return 
+     */
+    public int readWithBufferedReader() {
+        String str;
+        try {
+            File file = new File(IDListe);
+            FileReader fr = new FileReader(file);
+            BufferedReader in = new BufferedReader(fr);
+            str = in.readLine();
+            return Integer.parseInt(str);
+        } catch (FileNotFoundException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+        } catch (IOException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+        }
+        return 0;
+    }
 }
