@@ -12,7 +12,7 @@ public class AllMembers {
 
     static {
         allMembers = new ReadWrite().readObject();
-        MedlemsRestance = new ReadWrite().readObjectMRestance();
+//        MedlemsRestance = new ReadWrite().readObjectMRestance();
     }
 
     public Member createMember(String name, int age, int Id, boolean aktiv, String aktivTekst, String jES, String konSvøm) {
@@ -24,8 +24,8 @@ public class AllMembers {
         allMembers.add(member);
         rw.write(allMembers);
         //add til restanceOversigt
-        MedlemsRestance.add(member);
-        rw.writeMRestance(MedlemsRestance);
+//        MedlemsRestance.add(member);
+//        rw.writeMRestance(MedlemsRestance);
     }
 
     public List<Member> showAllMembers() {
