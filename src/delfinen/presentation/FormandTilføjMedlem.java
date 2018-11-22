@@ -233,7 +233,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
     private void tilføjMedlemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilføjMedlemButtonActionPerformed
         try {
             boolean aktiv = false;
-            String aktivTekst = "Nej";
+            String aktivTekst = "Passiv";
             String jES = "Junior";
             String konSvøm = "";
             
@@ -248,7 +248,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
 
             if (aktivRadioButton.isSelected()) {
                 aktiv = true;
-                aktivTekst = "Ja";
+                aktivTekst = "Aktiv";
                 
             }
             if (age > 17) {
@@ -266,7 +266,7 @@ public class FormandTilføjMedlem extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Du kan ikke skrive tal i navnefeltet");
             } else {
                 AllMembers c = new AllMembers();
-                Member member = c.createMember(name, age, Id, aktivTekst, jES, konSvøm);
+                Member member = c.createMember(name, age, Id, aktiv, aktivTekst, jES, konSvøm);
                 c.addMember(member);
                 reset();
                 JOptionPane.showMessageDialog(null, "Medlem er nu tilføjet!");
