@@ -15,22 +15,17 @@ public class AllMembers {
 //        MedlemsRestance = new ReadWrite().readObject();
 //    }
 
-    public Member createMember(String name, int age, int Id, boolean aktiv, String jES, String konSvøm) {
-        return new Member(name, age, Id, aktiv, jES, konSvøm);
+    public Member createMember(String name, int age, int Id, boolean aktiv, String aktivTekst, String jES, String konSvøm) {
+        return new Member(name, age, Id, aktiv, aktivTekst, jES, konSvøm);
     }
     
-    public Member createMember(String name, int age, int Id, String aktivTekst, String jES, String konSvøm) {
-        return new Member(name, age, Id, aktivTekst, jES, konSvøm);
-    }
-    
-
     public void addMember(Member member) {
         //add til medlemsoversigt
         allMembers.add(member);
         rw.write(allMembers);
         //add til restanceOversigt
-        MedlemsRestance.add(member);
-        rw.write(MedlemsRestance);
+//        MedlemsRestance.add(member);
+//        rw.write(MedlemsRestance);
     }
 
     public List<Member> showAllMembers() {
