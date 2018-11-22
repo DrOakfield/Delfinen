@@ -93,9 +93,9 @@ public class FormandMedlemsliste extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(2).setMinWidth(60);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(60);
             jTable1.getColumnModel().getColumn(2).setMaxWidth(60);
-            jTable1.getColumnModel().getColumn(3).setMinWidth(60);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(60);
+            jTable1.getColumnModel().getColumn(3).setMinWidth(70);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(70);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(70);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
