@@ -17,9 +17,9 @@ public class Kontingent {
     private double resultat;
     private int kontingent;
 
-    public Kontingent(Member a, AllMembers b) {
-        this.mem = a;
-        this.aMem = b;
+    public Kontingent(Member mem, AllMembers aMem) {
+        this.mem = mem;
+        this.aMem = aMem;
     }
 
     // aktivitetsform 0 = pasiv , 1 = aktiv
