@@ -37,7 +37,7 @@ public class KassererRestance extends javax.swing.JFrame {
             rowData[0] = aMem.showRestanceOversigt().get(i).getName();
             rowData[1] = aMem.showRestanceOversigt().get(i).getAge();
             rowData[2] = aMem.showRestanceOversigt().get(i).getId();
-            rowData[3] = aMem.showRestanceOversigt().get(i).;
+        //    rowData[3] = aMem.showRestanceOversigt().get(i).;
             Tabel.addRow(rowData);
         }
     }
