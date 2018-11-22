@@ -23,26 +23,26 @@ public class FormandMedlemsliste extends javax.swing.JFrame {
     public String fullName;
     public int age;
     public int Id;
-    Member a;
-    AllMembers b;
+    Member mem;
+    AllMembers aMem;
     
     
     public FormandMedlemsliste(Member a, AllMembers b) {
-        this.a = a;
-        this.b = b;
+        this.mem = a;
+        this.aMem = b;
         initComponents();
         addRowToJTable();
     }
     public void addRowToJTable(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         Object rowData[] = new Object[6];
-        for (int i = 0; i < b.showAllMembers().size(); i++) {
-            rowData[0] = b.showAllMembers().get(i).getName();
-            rowData[1] = b.showAllMembers().get(i).getAge();
-            rowData[2] = b.showAllMembers().get(i).getId();
-            rowData[3] = b.showAllMembers().get(i).getAktiv();
-            rowData[4] = b.showAllMembers().get(i).getjES();
-            rowData[5] = b.showAllMembers().get(i).getKonSvøm();
+        for (int i = 0; i < aMem.showAllMembers().size(); i++) {
+            rowData[0] = aMem.showAllMembers().get(i).getName();
+            rowData[1] = aMem.showAllMembers().get(i).getAge();
+            rowData[2] = aMem.showAllMembers().get(i).getId();
+            rowData[3] = aMem.showAllMembers().get(i).getAktiv();
+            rowData[4] = aMem.showAllMembers().get(i).getjES();
+            rowData[5] = aMem.showAllMembers().get(i).getKonSvøm();
             model.addRow(rowData);
         }
     }
@@ -135,7 +135,7 @@ public class FormandMedlemsliste extends javax.swing.JFrame {
     private void tilbageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tilbageButtonActionPerformed
         // TODO add your handling code here:
         
-        new FormandMenu(a, b).setVisible(true);
+        new FormandMenu(mem, aMem).setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_tilbageButtonActionPerformed
